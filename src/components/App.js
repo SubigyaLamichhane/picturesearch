@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import axios from 'axios';
 import ImageList from './List'
+import { clientKey } from '../../keys';
 
 
 class App extends React.Component {
@@ -14,7 +15,7 @@ class App extends React.Component {
         .get('https://api.unsplash.com/search/photos', {
             params: { query: term },
             headers: {
-                Authorization: 'Client-ID ZgKoBjO2inpRu-fJmmk-l87RFfJZLh_uDP4x9Lp-c98'
+                Authorization: clientKey 
             }  
         })
         .then(response => {
